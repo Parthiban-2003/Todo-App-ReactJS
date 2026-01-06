@@ -32,6 +32,7 @@ function App() {
     let ModifiedData = valueStore.map((item) => {
       return item.id === isModified.id ? {...item, textValues:inputValue} : item
     });
+    
     setValueStore(ModifiedData);
     SetValue("");
     setModified(null);
@@ -42,6 +43,7 @@ function App() {
     let UpdateData = valueStore.find((item)=>{
       return item.id === id
     });
+    
     setModified(UpdateData);
     SetValue(UpdateData.textValues);
   }
@@ -51,6 +53,7 @@ function App() {
     let DeleteData = valueStore.filter((item)=>{
       return item.id !== id;
     });
+    
     setValueStore(DeleteData);
   }
 
@@ -59,6 +62,7 @@ function App() {
     let CompleteTask = valueStore.map((item)=>{
       return item.id === id ? {...item,complete:!item.complete} : item
     });
+    
     setValueStore(CompleteTask);
   }
 
